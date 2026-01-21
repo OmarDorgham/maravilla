@@ -23,12 +23,9 @@
                                 <a href="{{route('about')}}">About Us</a>
 
                             </li>
-                            <li class="mil-has-children">
-                                <a href="#.">Services</a>
-                                <ul>
-                                    <li><a href="services.html">Services List</a></li>
-                                    <li><a href="service.html">Single service</a></li>
-                                </ul>
+                            <li class="mil-has-children {{request()->routeIs('projects')?'mil-active':''}}">
+                                <a href="{{route('projects')}}">Projects</a>
+
                             </li>
                             <li class="mil-has-children">
                                 <a href="#.">Newsletter</a>
