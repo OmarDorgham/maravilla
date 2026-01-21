@@ -1,0 +1,105 @@
+.mil-preloader .mil-preloader-animation .mil-pos-abs .mil-reveal-frame .mil-reveal-box {
+    background-color: #7e6239;
+}
+
+
+.mil-main-menu ul li a.mil-active:before {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    background-color: #7e6239;
+}
+
+.mil-main-menu ul li.mil-active > a {
+    color: #7e6239;
+}
+
+.mil-main-menu ul li.mil-active > a:hover {
+    color: #ebcc9d !important;
+    -webkit-filter: brightness(110%);
+    filter: brightness(110%);
+}
+
+.mil-dark-bg video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    opacity: 0.3;
+    filter: invert(100%); /* عكس ألوان الفيديو فقط */
+    -webkit-filter: invert(100%);
+}
+
+.mil-custom-logo {
+    width: 100px;
+    height: auto;
+    display: block;
+    position: absolute;
+    z-index: 9999 !important;
+    /* لضمان ظهورها فوق التظليل */
+    filter: none !important;
+    /* لمنع قلب الألوان */
+}
+
+.mil-button {
+    background-color: #7e6239;
+    color: rgb(0, 0, 0);
+}
+
+.mil-button:hover {
+    background-color: #ebcc9d;
+    color: #7e6239;
+}
+
+.mil-arrow path {
+    fill: #7e6239 !important;
+}
+
+.trapezoid-grid {
+    padding-top: 50px;
+    padding-left: 15%;
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: repeat(8, 15%);
+
+    grid-auto-rows: 100px; /* هذا سيجبر الصفوف على أن تكون قريبة جداً من بعضها */
+    align-items: center; /* يضمن أن العناصر تبدأ من أعلى الخلية */
+
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    /*background-color: red; !* يمكنك إعادته لـ transparent لاحقاً *!*/
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+}
+
+.trapezoid {
+    width: 70%; /* اجعل العرض متناسب مع الخلية */
+    height: 300%; /* الارتفاع الفعلي للعنصر أكبر من ارتفاع الصف (30px) ليحدث التداخل */
+    background: #000;
+    rotate: -15deg;
+    position: relative;
+    z-index: 1;
+
+    clip-path: polygon(0% 0%, 80% 10%, 80% 80%, 0% 100%);
+    opacity: 0;
+
+    transform: scale(0.7) translateY(20px) rotate(-30deg);
+
+}
+
+.trapezoid.show {
+    animation: build 0.4s ease forwards;
+}
+
+@keyframes build {
+    to {
+        filter: blur(10px);
+        opacity: 0.06;
+    }
+}
+
