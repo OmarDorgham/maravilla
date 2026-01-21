@@ -43,40 +43,50 @@
 @section('custom_js')
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-
             const items = document.querySelectorAll('.trapezoid');
             const itemsPerRow = 8;
-
             let index = 0;
-            let direction = "build"; // build | remove
+            let appearing = true; // متغير لتحديد الحالة (إظهار أم إخفاء)
 
-            function animate() {
+            function process() {
+                // حالة الإظهار
+                if (appearing) {
+                    if (index < items.length) {
+                        const rowIndex = Math.floor(index / itemsPerRow);
+                        const offset = rowIndex * 70;
 
+                        items[index].style.marginLeft = offset + "px";
+                        items[index].classList.add("show");
 
-                    if (index >= items.length) {
-                        // عند انتهاء البناء ننتظر قليلاً ثم نبدأ الهدم
-                        setTimeout(() => {
-                            direction = "remove";
-                            index = items.length - 1;
-                        }, 800);
-                        return;
+                        index++;
+                        setTimeout(process, 150);
+                    } else {
+                        // انتهى الإظهار، انتظر قليلاً ثم ابدأ الإخفاء من البداية
+                        appearing = false;
+                        index = 0;
+                        setTimeout(process, 1000); // وقت انتظار قبل بدء الإخفاء
                     }
+                }
+                // حالة الإخفاء
+                else {
+                    if (index < items.length) {
+                        items[index].classList.remove("show");
 
-                    const rowIndex = Math.floor(index / itemsPerRow);
-                    const offset = rowIndex * 70;
-
-                    items[index].style.marginLeft = offset + "px";
-                    items[index].classList.add('show');
-
-                    index++;
-
-                setTimeout(animate, 150);
+                        index++;
+                        setTimeout(process, 150);
+                    } else {
+                        // انتهى الإخفاء، انتظر قليلاً ثم ابدأ الإظهار من جديد
+                        appearing = true;
+                        index = 0;
+                        setTimeout(process, 1000); // وقت انتظار قبل إعادة الدورة
+                    }
+                }
             }
 
-            // يبدأ بعد 5 ثواني
-            setTimeout(animate, 5000);
-            // items.classList.remove('show');
+            // يبدأ بعد 5 ثواني كما طلبت
+            setTimeout(process, 5000);
         });
+
     </script>
 
 @endsection

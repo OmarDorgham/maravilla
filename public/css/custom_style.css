@@ -88,18 +88,20 @@
     clip-path: polygon(0% 0%, 80% 10%, 80% 80%, 0% 100%);
     opacity: 0;
 
+    /*transform: scale(0.7) translateY(20px) rotate(-30deg);*/
     transform: scale(0.7) translateY(20px) rotate(-30deg);
+
+    transition:
+        opacity 0.5s ease,
+        filter 0.5s ease,
+        transform 0.5s ease;
 
 }
 
 .trapezoid.show {
-    animation: build 0.4s ease forwards;
+    opacity: 0.06;
+    filter: blur(3px);
+    transform: scale(0.7)  rotate(-30deg);
 }
 
-@keyframes build {
-    to {
-        filter: blur(10px);
-        opacity: 0.06;
-    }
-}
 
