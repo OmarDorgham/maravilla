@@ -14,6 +14,11 @@
     <!-- Scripts -->
     {{--        @vite(['resources/css/app.css', 'resources/js/app.js'])--}}
     <link href="{{asset('admin-panel/css/style.css')}}" rel="stylesheet">
+    <!-- Fancybox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+
+    <!-- Fancybox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 
 </head>
 <body class="font-sans antialiased">
@@ -35,6 +40,7 @@
     </main>
 </div>
 <script src="{{asset('admin-panel/js/script.js')}}" defer></script>
+
 
 </body>
 </html>

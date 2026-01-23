@@ -16,6 +16,8 @@ return new class extends Migration {
             $table->text('description');
             $table->string('main_image');
             $table->boolean('is_featured')->default(false); // لعرض أهم 5 مشاريع في القائمة
+            $table->date('project_date');
+            $table->string('client_name');
             $table->timestamps();
         });
 
