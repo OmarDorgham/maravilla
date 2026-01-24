@@ -25,7 +25,6 @@
                             </li>
                             <li class="mil-has-children {{request()->routeIs('projects')?'mil-active':''}}">
                                 <a href="{{route('projects')}}">Projects</a>
-
                             </li>
                             <li class="mil-has-children">
                                 <a href="#.">Newsletter</a>
@@ -62,11 +61,11 @@
 
                                     <ul class="mil-menu-list">
                                         @foreach($profileProjects as $project)
-                                        <li>
-                                            <a href="project-1.html" class="mil-light-soft">
-                                                {{$project->title}}
-                                            </a>
-                                        </li>
+                                            <li>
+                                                <a href="{{route('projects.show',$project)}}" class="mil-light-soft">
+                                                    {{$project->title}}
+                                                </a>
+                                            </li>
                                         @endforeach
                                     </ul>
 

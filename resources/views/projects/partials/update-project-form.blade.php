@@ -8,7 +8,7 @@
 </x-primary-button>
 
 <x-modal name="edit-project-{{ $project->id }}" :show="$errors->any()" focusable>
-    <form method="POST" action="{{ route('projects.update', $project->id) }}" enctype="multipart/form-data" class="p-6">
+    <form method="POST" action="{{ route('admin.projects.update', $project->id) }}" enctype="multipart/form-data" class="p-6">
         @csrf
         @method('PUT')
 

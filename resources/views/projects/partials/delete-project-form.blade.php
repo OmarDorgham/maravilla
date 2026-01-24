@@ -7,7 +7,7 @@
     </svg>
 </x-danger-button>
 <x-modal name="delete-project-{{ $project->id }}" :show="$errors->any()" focusable>
-    <form method="POST" action="{{ route('projects.destroy', $project->id) }}" class="p-6">
+    <form method="POST" action="{{ route('admin.projects.destroy', $project->id) }}" class="p-6">
         @csrf
         @method('DELETE')
 

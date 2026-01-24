@@ -54,10 +54,15 @@ class ProjectController extends Controller
         // ربط المشروع بالشركة الحالية للمستخدم
         $project = Project::create($validated);
 
-        return redirect()->route('projects.index')->with('success', 'Project created successfully.');
+        return redirect()->back()->with('success', 'Project created successfully.');
     }
 
     public function show(Project $project)
+    {
+        return view('projects.show', compact('project'));
+    }
+
+    public function showWebsite(Project $project)
     {
         return view('projects.show', compact('project'));
     }
@@ -85,7 +90,7 @@ class ProjectController extends Controller
 
         $project->update($validated);
 
-        return redirect()->route('projects.index')->with('success', 'Project updated successfully.');
+        return redirect()->route('admin.projects.index')->with('success', 'Project updated successfully.');
     }
 
     /**
@@ -100,6 +105,6 @@ class ProjectController extends Controller
 
         $project->delete();
 
-        return redirect()->route('projects.index')->with('success', 'Project deleted successfully.');
+        return redirect()->route('admin.projects.index')->with('success', 'Project deleted successfully.');
     }
 }

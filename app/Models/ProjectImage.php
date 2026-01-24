@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProjectImage extends Model
 {
-    protected $fillable = ['title', 'description', 'main_image', 'is_featured'];
+    protected $fillable = ['title', 'image', 'project_id'];
 
-    public function images() {
-        return $this->hasMany(ProjectImage::class);
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
     }
 }

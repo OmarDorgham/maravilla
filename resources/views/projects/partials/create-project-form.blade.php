@@ -16,7 +16,7 @@
     </x-primary-button>
 
     <x-modal name="create-project" :show="$errors->any()" focusable>
-        <form method="POST" action="{{ route('projects.store') }}" class="p-6" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('admin.projects.store') }}" class="p-6" enctype="multipart/form-data">
             @csrf
 
             <h2 class="text-lg font-medium text-gray-900">
