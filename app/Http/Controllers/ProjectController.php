@@ -15,7 +15,7 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::latest()->get();
-        return view('projects.index', compact('projects'));
+        return view('dashboard.projects.index', compact('projects'));
     }
 
     /**
@@ -59,12 +59,7 @@ class ProjectController extends Controller
 
     public function show(Project $project)
     {
-        return view('projects.show', compact('project'));
-    }
-
-    public function showWebsite(Project $project)
-    {
-        return view('projects.show', compact('project'));
+        return view('dashboard.projects.show', compact('project'));
     }
 
     public function update(Request $request, Project $project)
@@ -98,13 +93,22 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        // حذف الصورة إذا موجودة
+        // حذف الصورة الرئيسية إذا موجودة
         if ($project->main_image) {
             Storage::disk('public')->delete($project->main_image);
         }
 
+        // حذف كل الصور المرتبطة قبل حذف المشروع نفسه
+        foreach ($project->images as $image) {
+            Storage::disk('public')->delete($image->image);
+            $image->delete();
+        }
+
+        // حذف المشروع
         $project->delete();
 
-        return redirect()->route('admin.projects.index')->with('success', 'Project deleted successfully.');
+        return redirect()->route('admin.projects.index')
+            ->with('success', 'Project deleted successfully.');
     }
+
 }

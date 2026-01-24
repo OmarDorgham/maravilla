@@ -111,12 +111,27 @@
 .mil-button.mil-icon-button-sm path {
     fill: #000 !important;
 }
+
 .mil-service-card-sm:before {
     background-color: #7e6239;
 }
+
 .mil-footer-menu ul li a:hover {
     color: #7e6239;
 }
+
 .mil-footer-menu ul li.mil-active a {
     color: #7e6239;
+}
+
+.mil-team-card:after {
+    background-color: #ebcc9d;
+}
+
+.mil-team-card .mil-description .mil-secrc-text a:hover {
+    color: #ebcc9d;
+}
+
+.social-icon {
+    pointer-events: auto !important;
 }

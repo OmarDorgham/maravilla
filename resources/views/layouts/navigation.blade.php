@@ -12,17 +12,21 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('dashboard')">
+                    <x-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('admin.projects.index')" :active="request()->routeIs('projects*')">
+                    <x-nav-link :href="route('admin.projects.index')" :active="request()->routeIs('admin.projects*')">
                         {{ __('Projects') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('admin.dashboard')">
+                    <x-nav-link :href="route('admin.team-members.index')" :active="request()->routeIs('admin.team-members*')">
                         {{ __('Team') }}
                     </x-nav-link>
                     <x-nav-link :href="route('admin.dashboard')">
                         {{ __('Blog') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('admin.contacts.index')"
+                                :active="request()->routeIs('admin.contacts.index')">
+                        {{ __('Contacts') }}
                     </x-nav-link>
                     <x-nav-link :href="route('admin.dashboard')">
                         {{ __('Settings') }}

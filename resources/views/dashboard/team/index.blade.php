@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Project') }} - {{$project->title}} - Images
+            {{ __('Team Members') }}
         </h2>
     </x-slot>
 
@@ -40,49 +40,16 @@
 
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <div class="max-w-xl">
-                    @include('projects.partials.images.create-image-form')
+                    @include('dashboard.team.partials.create-member-form')
                 </div>
             </div>
 
 
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <div class="w-full">
-                    @include('projects.partials.images.images-list')
+                    @include('dashboard.team.partials.team-list')
                 </div>
             </div>
         </div>
     </div>
 </x-app-layout>
-<script>
-    function imageUploader() {
-        return {
-            images: [],
-
-            handleFiles(files) {
-                for (let file of files) {
-                    this.images.push({
-                        file: file,
-                        url: URL.createObjectURL(file)
-                    });
-                }
-                this.syncInput();
-            },
-
-            handleDrop(e) {
-                this.handleFiles(e.dataTransfer.files);
-            },
-
-            remove(index) {
-                this.images.splice(index, 1);
-                this.syncInput();
-            },
-
-            syncInput() {
-                const dt = new DataTransfer();
-                this.images.forEach(img => dt.items.add(img.file));
-                this.$refs.fileInput.files = dt.files;
-            }
-        }
-    }
-</script>
-

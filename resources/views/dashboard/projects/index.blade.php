@@ -40,14 +40,14 @@
 
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <div class="max-w-xl">
-                    @include('projects.partials.create-project-form')
+                    @include('dashboard.projects.partials.create-project-form')
                 </div>
             </div>
 
 
             <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
                 <div class="w-full">
-                    @include('projects.partials.projects-list')
+                    @include('dashboard.projects.partials.projects-list')
                 </div>
             </div>
         </div>

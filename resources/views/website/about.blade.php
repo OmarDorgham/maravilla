@@ -9,7 +9,7 @@
             <div class="container">
                 <ul class="mil-breadcrumbs mil-mb-60">
                     <li><a href="{{route('home')}}">Homepage</a></li>
-                    <li><a href="portfolio-1.html">About Us</a></li>
+                    <li><a href="{{route('about')}}">About Us</a></li>
                 </ul>
                 <h1 class="mil-mb-60">Designing a <br> Better <span class="mil-thin">World Today</span></h1>
                 <a href="#about" class="mil-link mil-dark mil-arrow-place mil-down-arrow">
@@ -187,105 +187,80 @@
                     </div>
 
                 </div>
-                <div class="col-lg-6">
 
+
+                <div class="col-lg-6">
                     <div class="mil-team-list">
                         <div class="mil-lines-place"></div>
 
                         <div class="row mil-mb-60">
-                            <div class="col-sm-6">
+                            @foreach($teamMembers->chunk(ceil($teamMembers->count() / 2)) as $index => $columnMembers)
+                                <div class="col-sm-6">
 
-                                <div class="mil-team-card mil-up mil-mb-30">
-                                    <img src="img/faces/1.jpg" alt="Team member">
-                                    <div class="mil-description">
-                                        <div class="mil-secrc-text">
-                                            <h5 class="mil-muted mil-mb-5"><a href="home-2.html">Anna Oldman</a></h5>
-                                            <p class="mil-link mil-light-soft mil-mb-10">Art Director</p>
-                                            <ul class="mil-social-icons mil-center">
-                                                <li><a href="#." target="_blank" class="social-icon"> <i
-                                                            class="fab fa-behance"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i
-                                                            class="fab fa-dribbble"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i
-                                                            class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i
-                                                            class="fab fa-github"></i></a></li>
-                                            </ul>
+                                    @if($index == 1)
+                                        <p class="mil-mobile-hidden mil-text-sm mil-mb-30" style="height: 30px;">
+                                            <span class="mil-accent">*</span> The founders of our agency
+                                        </p>
+                                    @endif
+
+                                    @foreach($columnMembers as $member)
+                                        <div class="mil-team-card mil-up mil-mb-30">
+                                            <img src="{{ asset('storage/' . $member->image) }}"
+                                                 alt="{{ $member->name }}">
+                                            <div class="mil-description">
+                                                <div class="mil-secrc-text">
+                                                    <h5 class="mil-muted mil-mb-5">
+                                                        <a href="#">
+                                                            {{ $member->name }}
+                                                        </a>
+                                                    </h5>
+                                                    <p class="mil-link mil-light-soft mil-mb-10">{{ $member->position }}</p>
+
+                                                    <ul class="mil-social-icons mil-center">
+                                                        <li>
+                                                            <a href="{{ $member->whatsapp??config('socials.whatsapp') }}"
+                                                               target="_blank" class="social-icon"
+                                                               rel="noopener noreferrer"
+                                                               onclick="window.open(this.href, '_blank'); return false;">
+                                                                <i class="fab fa-whatsapp"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="{{ $member->linkedin ??config('socials.linkedin')}}"
+                                                               target="_blank" class="social-icon"
+                                                               rel="noopener noreferrer"
+                                                               onclick="window.open(this.href, '_blank'); return false;">
+                                                                <i class="fab fa-linkedin"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="{{ $member->instagram ??config('socials.instagram')}}"
+                                                               target="_blank"
+                                                               class="social-icon"
+                                                               rel="noopener noreferrer"
+                                                               onclick="window.open(this.href, '_blank'); return false;">
+                                                                <i class="fab fa-instagram"></i>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="{{ $member->behance ??config('socials.behance')}}"
+                                                               target="_blank" class="social-icon"
+                                                               rel="noopener noreferrer"
+                                                               onclick="window.open(this.href, '_blank'); return false;">
+                                                                <i class="fab fa-behance"></i>
+                                                            </a>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
+                                    @endforeach
+
                                 </div>
-
-                                <div class="mil-team-card mil-up mil-mb-30">
-                                    <img src="img/faces/3.jpg" alt="Team member">
-                                    <div class="mil-description">
-                                        <div class="mil-secrc-text">
-                                            <h5 class="mil-muted mil-mb-5"><a href="home-2.html">Oscar Freeman</a></h5>
-                                            <p class="mil-link mil-light-soft mil-mb-10">Frontend Dev</p>
-                                            <ul class="mil-social-icons mil-center">
-                                                <li><a href="#." target="_blank" class="social-icon"> <i
-                                                            class="fab fa-behance"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i
-                                                            class="fab fa-dribbble"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i
-                                                            class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i
-                                                            class="fab fa-github"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-sm-6">
-
-                                <p class="mil-mobile-hidden mil-text-sm mil-mb-30" style="height: 30px;"><span
-                                        class="mil-accent">*</span> The founders of our agency</p>
-
-                                <div class="mil-team-card mil-up mil-mb-30">
-                                    <img src="img/faces/2.jpg" alt="Team member">
-                                    <div class="mil-description">
-                                        <div class="mil-secrc-text">
-                                            <h5 class="mil-muted mil-mb-5"><a href="home-2.html">Emma Newman</a></h5>
-                                            <p class="mil-link mil-light-soft mil-mb-10">Founder</p>
-                                            <ul class="mil-social-icons mil-center">
-                                                <li><a href="#." target="_blank" class="social-icon"> <i
-                                                            class="fab fa-behance"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i
-                                                            class="fab fa-dribbble"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i
-                                                            class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i
-                                                            class="fab fa-github"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="mil-team-card mil-up mil-mb-30">
-                                    <img src="img/faces/4.jpg" alt="Team member">
-                                    <div class="mil-description">
-                                        <div class="mil-secrc-text">
-                                            <h5 class="mil-muted mil-mb-5"><a href="home-2.html">Lisa Trueman</a></h5>
-                                            <p class="mil-link mil-light-soft mil-mb-10">UI/UX Designer</p>
-                                            <ul class="mil-social-icons mil-center">
-                                                <li><a href="#." target="_blank" class="social-icon"> <i
-                                                            class="fab fa-behance"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i
-                                                            class="fab fa-dribbble"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i
-                                                            class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#." target="_blank" class="social-icon"> <i
-                                                            class="fab fa-github"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
+                            @endforeach
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </div>

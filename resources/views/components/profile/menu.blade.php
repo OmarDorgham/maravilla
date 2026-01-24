@@ -26,12 +26,8 @@
                             <li class="mil-has-children {{request()->routeIs('projects')?'mil-active':''}}">
                                 <a href="{{route('projects')}}">Projects</a>
                             </li>
-                            <li class="mil-has-children">
-                                <a href="#.">Newsletter</a>
-                                <ul>
-                                    <li><a href="blog.html">Blog List</a></li>
-                                    <li><a href="publication.html">Publication</a></li>
-                                </ul>
+                            <li class="mil-has-children {{request()->routeIs('contactus')?'mil-active':''}}">
+                                <a href="{{route('contactus')}}">Contact Us</a>
                             </li>
                             <li class="mil-has-children">
                                 <a href="#.">Other pages</a>
