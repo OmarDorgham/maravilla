@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
@@ -40,13 +41,26 @@ class ProjectController extends Controller
         // تعيين is_featured بشكل صحيح
         $validated['is_featured'] = $request->has('is_featured') ? true : false;
 
+        // إنشاء slug
+        $baseSlug = Str::slug($validated['title']);
+        $slug = $baseSlug;
+
+        $counter = 1;
+        while (Project::where('slug', $slug)->exists()) {
+            $slug = $baseSlug . '-' . $counter++;
+        }
+
+        $validated['slug'] = $slug;
         // ربط المشروع بالشركة الحالية للمستخدم
         $project = Project::create($validated);
 
         return redirect()->route('projects.index')->with('success', 'Project created successfully.');
     }
 
-
+    public function show(Project $project)
+    {
+        return view('projects.show', compact('project'));
+    }
 
     public function update(Request $request, Project $project)
     {

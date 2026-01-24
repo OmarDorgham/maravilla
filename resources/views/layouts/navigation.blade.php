@@ -19,11 +19,15 @@
                         {{ __('Projects') }}
                     </x-nav-link>
                     <x-nav-link :href="route('dashboard')">
-                        {{ __('Blog') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('dashboard')" >
                         {{ __('Team') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('dashboard')">
+                        {{ __('Blog') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('dashboard')">
+                        {{ __('Settings') }}
+                    </x-nav-link>
+
                 </div>
             </div>
 

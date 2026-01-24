@@ -114,3 +114,9 @@
 .mil-service-card-sm:before {
     background-color: #7e6239;
 }
+.mil-footer-menu ul li a:hover {
+    color: #7e6239;
+}
+.mil-footer-menu ul li.mil-active a {
+    color: #7e6239;
+}

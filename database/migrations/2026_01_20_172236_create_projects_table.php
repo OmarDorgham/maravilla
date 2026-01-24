@@ -13,6 +13,7 @@ return new class extends Migration {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('slug')->unique();
             $table->text('description');
             $table->string('main_image');
             $table->boolean('is_featured')->default(false); // لعرض أهم 5 مشاريع في القائمة
