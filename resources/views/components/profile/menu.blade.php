@@ -30,12 +30,12 @@
                                 <a href="{{route('contactus')}}">Contact Us</a>
                             </li>
                             <li class="mil-has-children">
-                                <a href="#.">Other pages</a>
-                                <ul>
-                                    <li><a href="team.html">Team</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                    <li><a href="404.html">404</a></li>
-                                </ul>
+                                <a href="#.">Blog</a>
+{{--                                <ul>--}}
+{{--                                    <li><a href="team.html">Team</a></li>--}}
+{{--                                    <li><a href="contact.html">Contact</a></li>--}}
+{{--                                    <li><a href="404.html">404</a></li>--}}
+{{--                                </ul>--}}
                             </li>
                         </ul>
                     </nav>
@@ -82,22 +82,32 @@
                             <div class="mil-divider mil-mb-60"></div>
                             <div class="row justify-content-between">
 
-                                <div class="col-lg-4 mil-mb-60">
+                                <div class="col-lg-10 mil-mb-60">
 
-                                    <h6 class="mil-muted mil-mb-30">Canada</h6>
+                                    <h6 class="mil-muted mil-mb-30">UAE</h6>
 
-                                    <p class="mil-light-soft mil-up">71 South Los Carneros Road, California <span
-                                            class="mil-no-wrap">+51 174 705 812</span></p>
+                                    <p class="mil-light-soft mil-up">Office 301, SIT Tower, Dubai silicon, Dubai.
+                                        <br>
+                                        <span class="mil-no-wrap">+971 4 238 8187</span>
+                                        <br>
+                                        <span class="mil-no-wrap">
+                                        <a href="mailto:oyd@live.it"
+                                           rel="noopener noreferrer"
+                                           onclick="window.open(this.href, '_blank'); return false;">
+                                            Info@maravilla-bc.com
+                                        </a>
+                                    </span>
+                                    </p>
 
                                 </div>
-                                <div class="col-lg-4 mil-mb-60">
+                                {{--                                <div class="col-lg-4 mil-mb-60">--}}
 
-                                    <h6 class="mil-muted mil-mb-30">Germany</h6>
+                                {{--                                    <h6 class="mil-muted mil-mb-30">Germany</h6>--}}
 
-                                    <p class="mil-light-soft">Leehove 40, 2678 MC De Lier, Netherlands <span
-                                            class="mil-no-wrap">+31 174 705 811</span></p>
+                                {{--                                    <p class="mil-light-soft">Leehove 40, 2678 MC De Lier, Netherlands <span--}}
+                                {{--                                            class="mil-no-wrap">+31 174 705 811</span></p>--}}
 
-                                </div>
+                                {{--                                </div>--}}
                             </div>
                         </div>
                     </div>

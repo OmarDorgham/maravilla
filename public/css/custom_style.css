@@ -57,51 +57,93 @@
     fill: #7e6239 !important;
 }
 
+
 .trapezoid-grid {
-    padding-top: 50px;
+    /*padding-top: 50px;*/
     padding-left: 15%;
     display: grid;
+
+    grid-template-columns: repeat(8, 80px); /* 8 عناصر دائمًا في الصف */
+    column-gap: 60px;
+    row-gap: 40px;
+    grid-auto-rows: 130px;
     overflow: hidden;
-    grid-template-columns: repeat(8, 15%);
-
-    grid-auto-rows: 100px; /* هذا سيجبر الصفوف على أن تكون قريبة جداً من بعضها */
-    align-items: center; /* يضمن أن العناصر تبدأ من أعلى الخلية */
-
+    align-items: center;
 
     position: absolute;
     top: 0;
     right: 0;
-    width: 40%;
-    height: 100%;
-    /*background-color: red; !* يمكنك إعادته لـ transparent لاحقاً *!*/
-    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    width: 70%;
+    height: 100vh;
+
+
+    /*clip-path: polygon(*/
+    /*    15% 0,*/
+    /*    100% 0,*/
+    /*    100% 100%,*/
+    /*    50% 100%*/
+    /*);*/
 }
 
 .trapezoid {
-    width: 70%; /* اجعل العرض متناسب مع الخلية */
-    height: 300%; /* الارتفاع الفعلي للعنصر أكبر من ارتفاع الصف (30px) ليحدث التداخل */
+    width: 100%;
+    height: 170%;
     background: #000;
-    rotate: -15deg;
     position: relative;
     z-index: 1;
 
+    rotate: -15deg;
     clip-path: polygon(0% 0%, 80% 10%, 80% 80%, 0% 100%);
+
+    --row-shift: 0px;
+
     opacity: 0;
-
-    /*transform: scale(0.7) translateY(20px) rotate(-30deg);*/
-    transform: scale(0.7) translateY(20px) rotate(-30deg);
-
+    transform: translateX(var(--row-shift))  rotate(-10deg);
     transition: opacity 0.5s ease,
     filter 0.5s ease,
     transform 0.5s ease;
 
+
+}
+
+/* الصف 1 */
+.trapezoid:nth-child(n + 1):nth-child(-n + 8) {
+    --row-shift: 0px;
+}
+
+/* الصف 2 */
+.trapezoid:nth-child(n + 9):nth-child(-n + 16) {
+    --row-shift: 140px;
+    /*background-color: red;*/
+}
+
+/* الصف 3 */
+.trapezoid:nth-child(n + 17):nth-child(-n + 24) {
+    --row-shift: 280px;
+}
+
+/* الصف 4 */
+.trapezoid:nth-child(n + 25):nth-child(-n + 32) {
+    --row-shift: 420px;
+}
+
+/* الصف 5 */
+.trapezoid:nth-child(n + 33):nth-child(-n + 40) {
+    --row-shift: 560px;
 }
 
 .trapezoid.show {
-    opacity: 0.06;
-    filter: blur(3px);
-    transform: scale(0.7) rotate(-30deg);
+    filter: drop-shadow(5px 10px black);
+    opacity: 0.08 !important;
+    transform: translateX(var(--row-shift))  rotate(-10deg);
+    transition: opacity 0.5s ease,
+    filter 0.5s ease,
+    transform 0.5s ease;
 }
+
+
+
+
 
 .mil-button.mil-icon-button-sm svg {
     margin-left: 0;

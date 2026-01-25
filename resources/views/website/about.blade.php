@@ -548,20 +548,30 @@
 
                             <div class="col-md-6 col-lg-5 mil-mb-60">
 
-                                <h6 class="mil-muted mil-up mil-mb-30">Canada</h6>
+                                <h6 class="mil-muted mil-up mil-mb-30">UAE</h6>
 
-                                <p class="mil-light-soft mil-up">71 South Los Carneros Road, California <span
-                                        class="mil-no-wrap">+51 174 705 812</span></p>
+                                <p class="mil-light-soft mil-up">Office 301, SIT Tower, Dubai silicon, Dubai.
+                                    <br>
+                                    <span class="mil-no-wrap">+971 4 238 8187</span>
+                                    <br>
+                                    <span class="mil-no-wrap">
+                                        <a href="mailto:oyd@live.it"
+                                           rel="noopener noreferrer"
+                                           onclick="window.open(this.href, '_blank'); return false;">
+                                            Info@maravilla-bc.com
+                                        </a>
+                                    </span>
+                                </p>
 
                             </div>
-                            <div class="col-md-6 col-lg-5 mil-mb-60">
+                            {{--                            <div class="col-md-6 col-lg-5 mil-mb-60">--}}
 
-                                <h6 class="mil-muted mil-up mil-mb-30">Germany</h6>
+                            {{--                                <h6 class="mil-muted mil-up mil-mb-30">Germany</h6>--}}
 
-                                <p class="mil-light-soft mil-up">Leehove 40, 2678 MC De Lier, Netherlands <span
-                                        class="mil-no-wrap">+31 174 705 811</span></p>
+                            {{--                                <p class="mil-light-soft mil-up">Leehove 40, 2678 MC De Lier, Netherlands <span--}}
+                            {{--                                        class="mil-no-wrap">+31 174 705 811</span></p>--}}
 
-                            </div>
+                            {{--                            </div>--}}
                         </div>
 
                     </div>
@@ -570,18 +580,39 @@
                         <div class="mil-vert-between">
                             <div class="mil-mb-30">
                                 <ul class="mil-social-icons mil-up">
-                                    <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a>
+                                    <li>
+                                        <a href="https://wa.me/1234567890" target="_blank" class="social-icon"
+                                           rel="noopener noreferrer"
+                                           onclick="window.open(this.href, '_blank'); return false;">
+                                            <i class="fab fa-whatsapp"></i>
+                                        </a>
                                     </li>
-                                    <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a>
+                                    <li>
+                                        <a href="https://wa.me/1234567890" target="_blank" class="social-icon"
+                                           rel="noopener noreferrer"
+                                           onclick="window.open(this.href, '_blank'); return false;">
+                                            <i class="fab fa-linkedin"></i>
+                                        </a>
                                     </li>
-                                    <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a>
+                                    <li>
+                                        <a href="https://wa.me/1234567890" target="_blank" class="social-icon"
+                                           rel="noopener noreferrer"
+                                           onclick="window.open(this.href, '_blank'); return false;">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
                                     </li>
-                                    <li><a href="#." target="_blank" class="social-icon"> <i class="far fa-circle"></i></a>
+                                    <li>
+                                        <a href="https://wa.me/1234567890" target="_blank" class="social-icon"
+                                           rel="noopener noreferrer"
+                                           onclick="window.open(this.href, '_blank'); return false;">
+                                            <i class="fab fa-behance"></i>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
-                            <p class="mil-light-soft mil-up">© Copyright {{\Carbon\Carbon::now()->format('Y')}}
-                                - {{env('APP_NAME')}}. All Rights Reserved.</p>
+                            <p class="mil-light-soft mil-up">
+                                © Copyright {{ now()->year }} - {{ config('app.name') }}. All Rights Reserved.
+                            </p>
                         </div>
 
                     </div>

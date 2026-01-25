@@ -53,9 +53,9 @@
                 if (appearing) {
                     if (index < items.length) {
                         const rowIndex = Math.floor(index / itemsPerRow);
-                        const offset = rowIndex * 70;
-
-                        items[index].style.marginLeft = offset + "px";
+                        // const offset = rowIndex * 40;
+                        //
+                        // items[index].style.marginLeft = offset + "px";
                         items[index].classList.add("show");
 
                         index++;
