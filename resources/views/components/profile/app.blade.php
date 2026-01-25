@@ -185,6 +185,21 @@
     });
 
 </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const frameTop = document.querySelector(".mil-frame .mil-frame-top");
+
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 50) { // إذا تم التمرير أكثر من 50px
+                frameTop.style.opacity = "0"; // اختفاء تدريجي
+                frameTop.style.transition = "opacity 0.3s ease-in-out";
+            } else {
+                frameTop.style.opacity = "1"; // العودة للظهور
+            }
+        });
+    });
+</script>
+
 
 @yield('custom_js')
 
