@@ -2,7 +2,7 @@
     <!-- frame clone -->
     <div class="mil-frame-top">
         <a href="{{route('home')}}" class="mil-logo">
-            <img src="{{ asset('img/logo2.png') }}" class="mil-custom-logo" alt="logo">
+            <img style=" filter: none !important;" src="{{ asset('img/logo.png') }}" class="mil-custom-logo" alt="logo">
         </a>
         <div class="mil-menu-btn">
             <span></span>

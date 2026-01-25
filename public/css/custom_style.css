@@ -34,12 +34,15 @@
 
 .mil-custom-logo {
     width: 100px;
+    top: 10px;
     height: auto;
     display: block;
     position: absolute;
     z-index: 9999 !important;
     /* لضمان ظهورها فوق التظليل */
-    filter: none !important;
+    /*filter: none !important;*/
+    filter: invert(100%); /* عكس ألوان الفيديو فقط */
+    /*-webkit-filter: invert(100%);*/
     /* لمنع قلب الألوان */
 }
 
@@ -98,7 +101,7 @@
     --row-shift: 0px;
 
     opacity: 0;
-    transform: translateX(var(--row-shift))  rotate(-10deg);
+    transform: translateX(var(--row-shift)) rotate(-10deg);
     transition: opacity 0.5s ease,
     filter 0.5s ease,
     transform 0.5s ease;
@@ -134,15 +137,12 @@
 
 .trapezoid.show {
     filter: drop-shadow(5px 10px black);
-    opacity: 0.08 !important;
-    transform: translateX(var(--row-shift))  rotate(-10deg);
+    opacity: 0.05 !important;
+    transform: translateX(var(--row-shift)) rotate(-10deg);
     transition: opacity 0.5s ease,
     filter 0.5s ease,
     transform 0.5s ease;
 }
-
-
-
 
 
 .mil-button.mil-icon-button-sm svg {
@@ -176,4 +176,12 @@
 
 .social-icon {
     pointer-events: auto !important;
+}
+
+.social-icon:hover {
+    color: #7e6239!important;
+}
+
+.mil-service-card-sm p {
+    opacity: 0.5;
 }

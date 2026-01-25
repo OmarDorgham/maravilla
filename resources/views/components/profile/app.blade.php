@@ -157,9 +157,36 @@
 <script src="{{asset('js/plugins/ScrollTo.min.js')}}"></script>
 <!-- MARAVILLA js -->
 <script src="{{asset('js/main.js')}}"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const items = document.querySelectorAll('.trapezoid');
+        const itemsPerRow = 8;
+        let index = 0;
+        let appearing = true;
+
+        function process() {
+            if (index < items.length) {
+                if (appearing) {
+                    items[index].classList.add("show");
+                } else {
+                    items[index].classList.remove("show");
+                }
+                index++;
+                setTimeout(process, 70);
+            } else {
+                // انتهت الدورة الحالية
+                appearing = !appearing; // قلب الحالة
+                index = 0;
+                setTimeout(process, 70);
+            }
+        }
+
+        setTimeout(process, 1000);
+    });
+
+</script>
+
 @yield('custom_js')
-
-
 
 </body>
 

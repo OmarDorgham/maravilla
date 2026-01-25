@@ -11,7 +11,7 @@
                     <li><a href="{{route('home')}}">Homepage</a></li>
                     <li><a href="{{route('about')}}">About Us</a></li>
                 </ul>
-                <h1 class="mil-mb-60">Designing a <br> Better <span class="mil-thin">World Today</span></h1>
+                <h1 class="mil-mb-60">Building a <br> Better <span class="mil-thin">World Today</span></h1>
                 <a href="#about" class="mil-link mil-dark mil-arrow-place mil-down-arrow">
                     <span>About Us</span>
                 </a>
@@ -24,6 +24,7 @@
     <section id="about">
         <div class="container mil-p-120-30">
             <div class="row justify-content-between align-items-center">
+
                 <div class="col-lg-6 col-xl-5">
 
                     <div class="mil-mb-90">
@@ -59,6 +60,7 @@
                 <div class="col-lg-5">
 
                     <div class="mil-about-photo mil-mb-90">
+
                         <div class="mil-lines-place"></div>
                         <div class="mil-up mil-img-frame" style="padding-bottom: 160%;">
                             <img src="{{asset('img/photo/about.png')}}" alt="img" class="mil-scale" data-value-1="1"
@@ -86,8 +88,8 @@
                 <div class="mil-mb-120">
                     <div class="row">
                         <div class="col-lg-10">
-
-                            <span class="mil-suptitle mil-light-soft mil-suptitle-right mil-up">Professionals focused on helping your brand<br> grow and move forward.</span>
+                            {{--A trusted team focused on building strong results and lasting value--}}
+                            <span class="mil-suptitle mil-light-soft mil-suptitle-right mil-up">A trusted team focused on building strong results<br> and lasting value.</span>
 
                         </div>
                     </div>
@@ -95,12 +97,13 @@
                     <div class="mil-complex-text justify-content-center mil-up mil-mb-15">
 
                         <span class="mil-text-image"><img src="img/photo/2.jpg" alt="team"></span>
-                        <h2 class="mil-h1 mil-muted mil-center">Unique <span class="mil-thin">Ideas</span></h2>
+                        {{--                        Building Ideas Into Reality--}}
+                        <h2 class="mil-h1 mil-muted mil-center">Building <span class="mil-thin">Ideas</span></h2>
 
                     </div>
                     <div class="mil-complex-text justify-content-center mil-up">
 
-                        <h2 class="mil-h1 mil-muted mil-center">For Your <span class="mil-thin">Business.</span></h2>
+                        <h2 class="mil-h1 mil-muted mil-center">Into <span class="mil-thin">Reality.</span></h2>
                         {{--                        <a href="services.html"--}}
                         {{--                           class="mil-services-button mil-button mil-arrow-place"><span>What we do</span></a>--}}
 
@@ -163,8 +166,11 @@
 
     <!-- team -->
     <section>
+        @include('components.profile.pattern')
+
         <div class="container mil-p-120-30">
             <div class="row justify-content-between align-items-center">
+
                 <div class="col-lg-5 col-xl-4">
 
                     <div class="mil-mb-90">
@@ -191,7 +197,7 @@
 
                 <div class="col-lg-6">
                     <div class="mil-team-list">
-                        <div class="mil-lines-place"></div>
+                        {{--                        <div class="mil-lines-place"></div>--}}
 
                         <div class="row mil-mb-60">
                             @foreach($teamMembers->chunk(ceil($teamMembers->count() / 2)) as $index => $columnMembers)
@@ -492,7 +498,7 @@
                 <div class="row justify-content-between">
                     <div class="col-md-4 col-lg-4 mil-mb-60">
 
-                        <div class="mil-muted mil-logo mil-up mil-mb-30">Ashley.</div>
+                        <div class="mil-muted mil-logo mil-up mil-mb-30">Maravilla.</div>
 
                         <p class="mil-light-soft mil-up mil-mb-30">Subscribe our newsletter:</p>
 
@@ -509,16 +515,16 @@
                                 <nav class="mil-footer-menu mil-mb-60">
                                     <ul>
                                         <li class="mil-up mil-active">
-                                            <a href="home-1.html">Home</a>
+                                            <a href="{{route('home')}}">Home</a>
                                         </li>
                                         <li class="mil-up">
-                                            <a href="portfolio-1.html">Portfolio</a>
+                                            <a href="{{route('about')}}">About Us</a>
                                         </li>
                                         <li class="mil-up">
-                                            <a href="services.html">Services</a>
+                                            <a href="{{route('projects')}}">Projects</a>
                                         </li>
                                         <li class="mil-up">
-                                            <a href="contact.html">Contact</a>
+                                            <a href="{{route('contactus')}}">Contact</a>
                                         </li>
                                         <li class="mil-up">
                                             <a href="blog.html">Blog</a>

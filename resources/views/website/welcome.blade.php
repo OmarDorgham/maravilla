@@ -41,52 +41,6 @@
     <!-- banner end -->
 @endsection
 @section('custom_js')
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const items = document.querySelectorAll('.trapezoid');
-            const itemsPerRow = 8;
-            let index = 0;
-            let appearing = true; // متغير لتحديد الحالة (إظهار أم إخفاء)
 
-            function process() {
-                // حالة الإظهار
-                if (appearing) {
-                    if (index < items.length) {
-                        const rowIndex = Math.floor(index / itemsPerRow);
-                        // const offset = rowIndex * 40;
-                        //
-                        // items[index].style.marginLeft = offset + "px";
-                        items[index].classList.add("show");
-
-                        index++;
-                        setTimeout(process, 150);
-                    } else {
-                        // انتهى الإظهار، انتظر قليلاً ثم ابدأ الإخفاء من البداية
-                        appearing = false;
-                        index = 0;
-                        setTimeout(process, 1000); // وقت انتظار قبل بدء الإخفاء
-                    }
-                }
-                // حالة الإخفاء
-                else {
-                    if (index < items.length) {
-                        items[index].classList.remove("show");
-
-                        index++;
-                        setTimeout(process, 150);
-                    } else {
-                        // انتهى الإخفاء، انتظر قليلاً ثم ابدأ الإظهار من جديد
-                        appearing = true;
-                        index = 0;
-                        setTimeout(process, 1000); // وقت انتظار قبل إعادة الدورة
-                    }
-                }
-            }
-
-            // يبدأ بعد 5 ثواني كما طلبت
-            setTimeout(process, 5000);
-        });
-
-    </script>
 
 @endsection
