@@ -78,4 +78,11 @@ class WebsiteController extends Controller
         return redirect()->back()->with('success', 'Your message has been sent successfully!');
     }
 
+    public function blog()
+    {
+        $recentPosts = Post::latest()->limit(2)->get();
+        $posts = Post::whereNotIn('id',$recentPosts->pluck('id'))->latest()->paginate(5);
+        return view('website.blog',compact('posts', 'recentPosts'));
+    }
+
 }

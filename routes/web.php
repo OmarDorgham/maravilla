@@ -24,6 +24,8 @@ Route::get('projects', [WebsiteController::class, 'projects'])->name('projects')
 Route::get('/projects/{project:slug}', [WebsiteController::class, 'showProject'])->name('projects.show');
 Route::get('contact-us', [WebsiteController::class, 'contact'])->name('contactus');
 Route::post('contact-us', [WebsiteController::class, 'storeContact'])->name('contactus.store');
+Route::get('blog', [WebsiteController::class, 'blog'])->name('blog');
+
 
 
 //https://maravilla-bc.com/
