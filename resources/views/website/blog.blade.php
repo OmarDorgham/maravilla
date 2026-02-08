@@ -72,18 +72,12 @@
                             </div>
                             <div class="mil-post-descr">
                                 <div class="mil-labels mil-up mil-mb-30">
-                                    <div class="mil-label mil-upper mil-accent">TECHNOLOGY</div>
-                                    <div class="mil-label mil-upper">may 24 2023</div>
+                                    <div class="mil-label mil-upper">{{$post->published_at->format('M d Y')}}</div>
                                 </div>
-                                <h4 class="mil-up mil-mb-30">How to Never Reach Creative Burnout</h4>
+                                <h4 class="mil-up mil-mb-30">{{$post->title}}</h4>
                                 <p class="mil-post-text mil-up mil-mb-30">Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Eius sequi commodi dignissimos optio, beatae, eos necessitatibus
-                                    nisi.
-                                    Nam cupiditate consectetur nostrum qui! Repellat natus nulla, nisi aliquid,
-                                    asperiores
-                                    impedit tempora sequi est reprehenderit cumque explicabo, dicta. Rem nihil ullam
-                                    totam
-                                    ea voluptas quibusdam repudiandae id ut at iure! Totam, a!</p>
+                                    {{$post->excerpt}}
+                                </p>
                                 <div class="mil-link mil-dark mil-arrow-place mil-up">
                                     <span>Read more</span>
                                 </div>
