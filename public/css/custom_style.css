@@ -179,12 +179,18 @@
 }
 
 .social-icon:hover {
-    color: #7e6239!important;
+    color: #7e6239 !important;
 }
 
 .mil-service-card-sm p {
     opacity: 0.5;
 }
+
+.mil-partner-frame img {
+    filter: invert(100%); /* عكس ألوان الفيديو فقط */
+    -webkit-filter: invert(100%);
+}
+
 /*@media screen and (max-width: 1200px) {*/
 /*    .mil-frame .mil-frame-top {*/
 /*        background-color: rgba(0, 0, 0, 0.95) !important;*/

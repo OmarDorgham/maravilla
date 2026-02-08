@@ -166,7 +166,7 @@
 
     <!-- team -->
     <section>
-{{--        @include('components.profile.pattern')--}}
+        {{--        @include('components.profile.pattern')--}}
 
         <div class="container mil-p-120-30">
             <div class="row justify-content-between align-items-center">
@@ -399,22 +399,63 @@
 
             <div class="swiper-container mil-infinite-show mil-up">
                 <div class="swiper-wrapper">
+
                     <div class="swiper-slide">
-                        <a href="#." class="mil-partner-frame" style="width: 60px;"><img src="img/partners/1.svg"
-                                                                                         alt="logo"></a>
+                        <a href="#" class="mil-partner-frame" style="width: 60px;">
+                            <img src="{{asset('img/partners/damac.png')}}" alt="logo">
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#." class="mil-partner-frame" style="width: 100px;"><img src="img/partners/2.svg"
-                                                                                          alt="logo"></a>
+                        <a href="#" class="mil-partner-frame" style="width: 60px;">
+                            <img src="{{asset('img/partners/dc.png')}}" alt="logo">
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#." class="mil-partner-frame" style="width: 60px;"><img src="img/partners/1.svg"
-                                                                                         alt="logo"></a>
+                        <a href="#" class="mil-partner-frame" style="width: 60px;">
+                            <img src="{{asset('img/partners/tech.png')}}" alt="logo">
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#." class="mil-partner-frame" style="width: 100px;"><img src="img/partners/2.svg"
-                                                                                          alt="logo"></a>
+                        <a href="#" class="mil-partner-frame" style="width: 60px;">
+                            <img src="{{asset('img/partners/elington.png')}}" alt="logo">
+                        </a>
                     </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="mil-partner-frame" style="width: 60px;">
+                            <img src="{{asset('img/partners/global.png')}}" alt="logo">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="mil-partner-frame" style="width: 60px;">
+                            <img src="{{asset('img/partners/besix.png')}}" alt="logo">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="mil-partner-frame" style="width: 60px;">
+                            <img src="{{asset('img/partners/sank.png')}}" alt="logo">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="mil-partner-frame" style="width: 60px;">
+                            <img src="{{asset('img/partners/naga.png')}}" alt="logo">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="mil-partner-frame" style="width: 60px;">
+                            <img src="{{asset('img/partners/b8.png')}}" alt="logo">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="mil-partner-frame" style="width: 60px;">
+                            <img src="{{asset('img/partners/ajmal.png')}}" alt="logo">
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="mil-partner-frame" style="width: 60px;">
+                            <img src="{{asset('img/partners/ua.png')}}" alt="logo">
+                        </a>
+                    </div>
+
                 </div>
             </div>
 
@@ -447,14 +488,17 @@
                             </div>
                             <div class="mil-post-descr">
                                 <div class="mil-labels mil-up mil-mb-30">
-                                    <div class="mil-label mil-upper mil-accent"> </div>
+                                    <div class="mil-label mil-upper mil-accent"></div>
                                     <div class="mil-label mil-upper">{{$post->published_at->format('Y-M-d')}}</div>
                                 </div>
                                 <h4 class="mil-up mil-mb-30">How to Become a Graphic Designer in 10 Simple Steps</h4>
                                 <p class="mil-post-text mil-up mil-mb-30">Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Eius sequi commodi dignissimos optio, beatae, eos necessitatibus nisi.
-                                    Nam cupiditate consectetur nostrum qui! Repellat natus nulla, nisi aliquid, asperiores
-                                    impedit tempora sequi est reprehenderit cumque explicabo, dicta. Rem nihil ullam totam
+                                    adipisicing elit. Eius sequi commodi dignissimos optio, beatae, eos necessitatibus
+                                    nisi.
+                                    Nam cupiditate consectetur nostrum qui! Repellat natus nulla, nisi aliquid,
+                                    asperiores
+                                    impedit tempora sequi est reprehenderit cumque explicabo, dicta. Rem nihil ullam
+                                    totam
                                     ea voluptas quibusdam repudiandae id ut at iure! Totam, a!</p>
                                 <div class="mil-link mil-dark mil-arrow-place mil-up">
                                     <span>Read more</span>

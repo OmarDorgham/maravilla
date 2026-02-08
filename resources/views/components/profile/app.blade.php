@@ -56,7 +56,7 @@
             <div class="mil-pos-abs mil-animation-2">
                 <div class="mil-reveal-frame">
                     <p class="mil-reveal-box"></p>
-                    <p class="mil-h3 mil-muted mil-thin">{{env('APP_URL')}}</p>
+                    <p class="mil-h3 mil-muted mil-thin">{{config('socials.app_url','maravilla-bc.com')}}</p>
                 </div>
             </div>
         </div>
@@ -157,34 +157,34 @@
 <script src="{{asset('js/plugins/ScrollTo.min.js')}}"></script>
 <!-- MARAVILLA js -->
 <script src="{{asset('js/main.js')}}"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const items = document.querySelectorAll('.trapezoid');
-        const itemsPerRow = 8;
-        let index = 0;
-        let appearing = true;
+{{--<script>--}}
+{{--    document.addEventListener("DOMContentLoaded", function () {--}}
+{{--        const items = document.querySelectorAll('.trapezoid');--}}
+{{--        const itemsPerRow = 8;--}}
+{{--        let index = 0;--}}
+{{--        let appearing = true;--}}
 
-        function process() {
-            if (index < items.length) {
-                if (appearing) {
-                    items[index].classList.add("show");
-                } else {
-                    items[index].classList.remove("show");
-                }
-                index++;
-                setTimeout(process, 70);
-            } else {
-                // انتهت الدورة الحالية
-                appearing = !appearing; // قلب الحالة
-                index = 0;
-                setTimeout(process, 70);
-            }
-        }
+{{--        function process() {--}}
+{{--            if (index < items.length) {--}}
+{{--                if (appearing) {--}}
+{{--                    items[index].classList.add("show");--}}
+{{--                } else {--}}
+{{--                    items[index].classList.remove("show");--}}
+{{--                }--}}
+{{--                index++;--}}
+{{--                setTimeout(process, 70);--}}
+{{--            } else {--}}
+{{--                // انتهت الدورة الحالية--}}
+{{--                appearing = !appearing; // قلب الحالة--}}
+{{--                index = 0;--}}
+{{--                setTimeout(process, 70);--}}
+{{--            }--}}
+{{--        }--}}
 
-        setTimeout(process, 1000);
-    });
+{{--        setTimeout(process, 1000);--}}
+{{--    });--}}
 
-</script>
+{{--</script>--}}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const frameTop = document.querySelector(".mil-frame .mil-frame-top");
