@@ -31,11 +31,11 @@
                             </li>
                             <li class="mil-has-children">
                                 <a href="#.">Blog</a>
-{{--                                <ul>--}}
-{{--                                    <li><a href="team.html">Team</a></li>--}}
-{{--                                    <li><a href="contact.html">Contact</a></li>--}}
-{{--                                    <li><a href="404.html">404</a></li>--}}
-{{--                                </ul>--}}
+                                {{--                                <ul>--}}
+                                {{--                                    <li><a href="team.html">Team</a></li>--}}
+                                {{--                                    <li><a href="contact.html">Contact</a></li>--}}
+                                {{--                                    <li><a href="404.html">404</a></li>--}}
+                                {{--                                </ul>--}}
                             </li>
                         </ul>
                     </nav>
@@ -71,10 +71,26 @@
                                     <h6 class="mil-muted mil-mb-30">Useful links</h6>
 
                                     <ul class="mil-menu-list">
-                                        <li><a href="{{route('privacy-policy')}}" class="mil-light-soft">Privacy Policy</a></li>
-                                        <li><a href="#." class="mil-light-soft">Terms and conditions</a></li>
-                                        <li><a href="#." class="mil-light-soft">Cookie Policy</a></li>
-                                        <li><a href="#." class="mil-light-soft">Careers</a></li>
+                                        <li>
+                                            <a href="{{route('privacy-policy')}}" class="mil-light-soft">
+                                                Privacy Policy
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{route('terms-and-conditions')}}" class="mil-light-soft">
+                                                Terms and conditions
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{{route('cookie-policy')}}" class="mil-light-soft">
+                                                Cookie Policy
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#." class="mil-light-soft">
+                                                Careers
+                                            </a>
+                                        </li>
                                     </ul>
 
                                 </div>

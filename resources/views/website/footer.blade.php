@@ -43,10 +43,26 @@
                         <div class="col-md-6 col-lg-5">
 
                             <ul class="mil-menu-list mil-up mil-mb-60">
-                                <li><a href="#." class="mil-light-soft">Privacy Policy</a></li>
-                                <li><a href="#." class="mil-light-soft">Terms and conditions</a></li>
-                                <li><a href="#." class="mil-light-soft">Cookie Policy</a></li>
-                                <li><a href="#." class="mil-light-soft">Careers</a></li>
+                                <li>
+                                    <a href="{{route('privacy-policy')}}" class="mil-light-soft">
+                                        Privacy Policy
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('terms-and-conditions')}}" class="mil-light-soft">
+                                        Terms and conditions
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{route('cookie-policy')}}" class="mil-light-soft">
+                                        Cookie Policy
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#." class="mil-light-soft">
+                                        Careers
+                                    </a>
+                                </li>
                             </ul>
 
                         </div>
