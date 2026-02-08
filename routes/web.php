@@ -10,8 +10,15 @@ use App\Http\Controllers\WebsiteController;
 use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/sitemap.xml', [WebsiteController::class, 'index']);
+
 Route::get('/', [WebsiteController::class, 'home'])->name('home');
 Route::get('about', [WebsiteController::class, 'about'])->name('about');
+
+Route::get('privacy-policy', [WebsiteController::class, 'privacyPolicy'])->name('privacy-policy');
+Route::get('terms-and-conditions', [WebsiteController::class, 'termsAndConditions'])->name('terms-and-conditions');
+Route::get('cookie-policy', [WebsiteController::class, 'cookiePolicy'])->name('cookie-policy');
+
 Route::get('projects', [WebsiteController::class, 'projects'])->name('projects');
 
 Route::get('/projects/{project:slug}', [WebsiteController::class, 'showProject'])->name('projects.show');

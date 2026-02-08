@@ -12,6 +12,15 @@ use Illuminate\Support\Str;
 
 class WebsiteController extends Controller
 {
+    public function index()
+    {
+        $posts = Post::whereNotNull('published_at')->get();
+
+        return response()
+            ->view('website.sitemap', compact('posts'))
+            ->header('Content-Type', 'text/xml');
+    }
+
     public function home()
     {
         return view('website.welcome');
@@ -21,7 +30,22 @@ class WebsiteController extends Controller
     {
         $teamMembers = TeamMember::limit(4)->get();
         $recentPosts = Post::latest()->limit(2)->get();
-        return view('website.about' , compact('teamMembers','recentPosts'));
+        return view('website.about', compact('teamMembers', 'recentPosts'));
+    }
+
+    public function privacyPolicy()
+    {
+        return view('website.privacy-policy');
+    }
+
+    public function termsAndConditions()
+    {
+        return view('website.terms-and-conditions');
+    }
+
+    public function cookiePolicy()
+    {
+        return view('website.cookie-policy');
     }
 
     public function projects()
