@@ -22,13 +22,13 @@
                             our website.
                         </p>
 
-                        <h5 class="mil-up mil-mb-10">3. User Accounts</h5>
-                        <p class="mil-up mil-mb-30">
-                            Some services may require creating an account. You are responsible for maintaining the
-                            confidentiality of your login information and for all activities under your account.
+                        <h5 class="mil-up mil-mb-10">3. Contact</h5>
+                        <p class="mil-up mil-mb-10">
+                            For questions regarding these Terms of Use, please contact us at:
                         </p>
-
-                        <h5 class="mil-up mil-mb-10">4. Acceptable Use</h5>
+                        <a href="mailto:info@maravilla-bc.com">info@maravilla-bc.com</a>
+                        <br>
+                        <h5 class="mil-up mil-mb-10 mt-4">4. Acceptable Use</h5>
                         <ul class="ms-3 mil-mb-30">
                             <li>You agree not to misuse the website, including uploading harmful content, violating
                                 laws, or interfering with other users.
@@ -76,11 +76,6 @@
                             courts.
                         </p>
 
-                        <h5 class="mil-up mil-mb-10">11. Contact</h5>
-                        <p class="mil-up mil-mb-10">
-                            For questions regarding these Terms of Use, please contact us at:
-                        </p>
-                        <a href="mailto:info@maravilla-bc.com">info@maravilla-bc.com</a>
 
                     </div>
 
