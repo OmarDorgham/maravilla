@@ -21,7 +21,7 @@
                     <x-nav-link :href="route('admin.team-members.index')" :active="request()->routeIs('admin.team-members*')">
                         {{ __('Team') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('admin.dashboard')">
+                    <x-nav-link :href="route('admin.blog.index')" :active="request()->routeIs('admin.blog*')">
                         {{ __('Blog') }}
                     </x-nav-link>
                     <x-nav-link :href="route('admin.contacts.index')"

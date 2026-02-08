@@ -166,7 +166,7 @@
 
     <!-- team -->
     <section>
-        @include('components.profile.pattern')
+{{--        @include('components.profile.pattern')--}}
 
         <div class="container mil-p-120-30">
             <div class="row justify-content-between align-items-center">
@@ -197,7 +197,7 @@
 
                 <div class="col-lg-6">
                     <div class="mil-team-list">
-                        {{--                        <div class="mil-lines-place"></div>--}}
+                        <div class="mil-lines-place"></div>
 
                         <div class="row mil-mb-60">
                             @foreach($teamMembers->chunk(ceil($teamMembers->count() / 2)) as $index => $columnMembers)
@@ -427,7 +427,7 @@
         <div class="container mil-p-120-60">
             <div class="row align-items-center mil-mb-30">
                 <div class="col-lg-6 mil-mb-30">
-                    <h3 class="mil-up">Popular Publications:</h3>
+                    <h3 class="mil-up">Recent Publications:</h3>
                 </div>
                 <div class="col-lg-6 mil-mb-30">
                     <div class="mil-adaptive-right mil-up">
@@ -438,54 +438,32 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6">
+                @foreach($recentPosts as $post)
+                    <div class="col-lg-6">
 
-                    <a href="publication.html" class="mil-blog-card mil-mb-60">
-                        <div class="mil-cover-frame mil-up">
-                            <img src="img/blog/1.jpg" alt="cover">
-                        </div>
-                        <div class="mil-post-descr">
-                            <div class="mil-labels mil-up mil-mb-30">
-                                <div class="mil-label mil-upper mil-accent">TECHNOLOGY</div>
-                                <div class="mil-label mil-upper">may 24 2023</div>
+                        <a href="#" class="mil-blog-card mil-mb-60">
+                            <div class="mil-cover-frame mil-up">
+                                <img src="{{asset('storage/'.$post->featured_image)}}" alt="cover">
                             </div>
-                            <h4 class="mil-up mil-mb-30">How to Become a Graphic Designer in 10 Simple Steps</h4>
-                            <p class="mil-post-text mil-up mil-mb-30">Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Eius sequi commodi dignissimos optio, beatae, eos necessitatibus nisi.
-                                Nam cupiditate consectetur nostrum qui! Repellat natus nulla, nisi aliquid, asperiores
-                                impedit tempora sequi est reprehenderit cumque explicabo, dicta. Rem nihil ullam totam
-                                ea voluptas quibusdam repudiandae id ut at iure! Totam, a!</p>
-                            <div class="mil-link mil-dark mil-arrow-place mil-up">
-                                <span>Read more</span>
+                            <div class="mil-post-descr">
+                                <div class="mil-labels mil-up mil-mb-30">
+                                    <div class="mil-label mil-upper mil-accent"> </div>
+                                    <div class="mil-label mil-upper">{{$post->published_at->format('Y-M-d')}}</div>
+                                </div>
+                                <h4 class="mil-up mil-mb-30">How to Become a Graphic Designer in 10 Simple Steps</h4>
+                                <p class="mil-post-text mil-up mil-mb-30">Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit. Eius sequi commodi dignissimos optio, beatae, eos necessitatibus nisi.
+                                    Nam cupiditate consectetur nostrum qui! Repellat natus nulla, nisi aliquid, asperiores
+                                    impedit tempora sequi est reprehenderit cumque explicabo, dicta. Rem nihil ullam totam
+                                    ea voluptas quibusdam repudiandae id ut at iure! Totam, a!</p>
+                                <div class="mil-link mil-dark mil-arrow-place mil-up">
+                                    <span>Read more</span>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
 
-                </div>
-                <div class="col-lg-6">
-
-                    <a href="publication.html" class="mil-blog-card mil-mb-60">
-                        <div class="mil-cover-frame mil-up">
-                            <img src="img/blog/2.jpg" alt="cover">
-                        </div>
-                        <div class="mil-post-descr">
-                            <div class="mil-labels mil-up mil-mb-30">
-                                <div class="mil-label mil-upper mil-accent">TECHNOLOGY</div>
-                                <div class="mil-label mil-upper">may 24 2023</div>
-                            </div>
-                            <h4 class="mil-up mil-mb-30">16 Best Graphic Design Online and Offline Courses</h4>
-                            <p class="mil-post-text mil-up mil-mb-30">Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Eius sequi commodi dignissimos optio, beatae, eos necessitatibus nisi.
-                                Nam cupiditate consectetur nostrum qui! Repellat natus nulla, nisi aliquid, asperiores
-                                impedit tempora sequi est reprehenderit cumque explicabo, dicta. Rem nihil ullam totam
-                                ea voluptas quibusdam repudiandae id ut at iure! Totam, a!</p>
-                            <div class="mil-link mil-dark mil-arrow-place mil-up">
-                                <span>Read more</span>
-                            </div>
-                        </div>
-                    </a>
-
-                </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>

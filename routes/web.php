@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ProjectImageController;
@@ -31,11 +32,15 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/dashboard', function () {
             return view('dashboard.index');
         })->middleware(['auth', 'verified'])->name('dashboard');
+
         Route::resource('projects', ProjectController::class);
         Route::post('/projects/{project}/images', [ProjectImageController::class, 'store'])->name('projects.images.store');
         Route::delete('/projects/images/{image}', [ProjectImageController::class, 'destroy'])->name('projects.images.destroy');
         Route::get('contacts', [ContactController::class, 'index'])->name('contacts.index');
         Route::resource('team-members', TeamMemberController::class);
+
+        Route::resource('blog', PostController::class);
+
 
     });
 

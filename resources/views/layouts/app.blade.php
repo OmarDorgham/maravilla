@@ -20,6 +20,9 @@
     <!-- Fancybox JS -->
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 
+    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/47.4.0/ckeditor5.css">
+
+
 </head>
 <body class="font-sans antialiased">
 <div class="min-h-screen bg-gray-100">
@@ -40,6 +43,31 @@
     </main>
 </div>
 <script src="{{asset('admin-panel/js/script.js')}}" defer></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const textarea = document.querySelector('#content');
+        if (textarea) {
+            ClassicEditor
+                .create(textarea, {
+                    toolbar: [
+                        'heading',
+                        'bold', 'italic',
+                        'link',
+                        'bulletedList', 'numberedList',
+                        'blockQuote',
+                        'undo', 'redo'
+                    ]
+                })
+                .then(editor => {
+                    // editor.ui.view.editable.element.style.minHeight = '400px';
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        }
+    });
+</script>
 
 
 </body>

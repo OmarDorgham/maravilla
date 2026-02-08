@@ -5,7 +5,7 @@
         <video autoplay muted loop>
             <source src="{{asset('attachments/intro.mp4')}}" type="video/mp4">
         </video>
-        @include('components.profile.pattern')
+{{--        @include('components.profile.pattern')--}}
         <div class="mi-invert-fix">
             <div class="mil-animation-frame">
                 <div class="mil-animation mil-position-1 mil-scale" data-value-1="7" data-value-2="1.6"></div>

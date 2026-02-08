@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Post;
 use App\Models\Project;
 use App\Models\TeamMember;
 use Illuminate\Http\Request;
@@ -19,7 +20,8 @@ class WebsiteController extends Controller
     public function about()
     {
         $teamMembers = TeamMember::limit(4)->get();
-        return view('website.about' , compact('teamMembers'));
+        $recentPosts = Post::latest()->limit(2)->get();
+        return view('website.about' , compact('teamMembers','recentPosts'));
     }
 
     public function projects()
