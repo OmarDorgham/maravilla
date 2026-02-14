@@ -31,7 +31,11 @@ Route::get('/projects/{project:slug}', [WebsiteController::class, 'showProject']
 Route::get('contact-us', [WebsiteController::class, 'contact'])->name('contactus');
 Route::post('contact-us', [WebsiteController::class, 'storeContact'])->name('contactus.store');
 Route::get('blog', [WebsiteController::class, 'blog'])->name('blog');
+Route::get('post/{post}', [WebsiteController::class, 'post'])->name('post');
 
+
+Route::get('/careers', [WebsiteController::class, 'careersIndex'])->name('careers');
+Route::post('/careers/apply', [WebsiteController::class, 'careersStore'])->name('careers.apply');
 
 //https://maravilla-bc.com/
 //Route::get('/dashboard', function () {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CareerApplication;
 use App\Models\Contact;
 use App\Models\Post;
 use App\Models\Project;
@@ -9,6 +10,8 @@ use App\Models\TeamMember;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\CareerApplicationSubmitted;
 
 class WebsiteController extends Controller
 {
@@ -81,8 +84,58 @@ class WebsiteController extends Controller
     public function blog()
     {
         $recentPosts = Post::latest()->limit(2)->get();
-        $posts = Post::whereNotIn('id',$recentPosts->pluck('id'))->latest()->paginate(5);
-        return view('website.blog',compact('posts', 'recentPosts'));
+        $posts = Post::whereNotIn('id', $recentPosts->pluck('id'))->latest()->paginate(5);
+        return view('website.blog', compact('posts', 'recentPosts'));
     }
 
+    public function post(Post $post)
+    {
+        $words = explode(' ', $post->title);
+
+        $chunk1 = implode(' ', array_slice($words, 0, 1));
+        $chunk2 = implode(' ', array_slice($words, 1, 1));
+        $chunk3 = implode(' ', array_slice($words, 2, 1));
+        $chunk4 = implode(' ', array_slice($words, 3));
+        return view('website.post', get_defined_vars());
+    }
+
+    public function careersIndex()
+    {
+        return view('website.careers');
+    }
+
+    public function careersStore(Request $request)
+    {
+        $validated = $request->validate([
+            'full_name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'email', 'max:255'],
+            'phone' => ['nullable', 'string', 'max:50'],
+            'position' => ['nullable', 'string', 'max:255'],
+            'location' => ['nullable', 'string', 'max:255'],
+            'message' => ['nullable', 'string', 'max:5000'],
+            'cv' => ['required', 'file', 'mimes:pdf,doc,docx', 'max:5120'], // 5MB
+        ]);
+
+        $file = $request->file('cv');
+        $safeName = Str::uuid()->toString() . '.' . $file->getClientOriginalExtension();
+        $path = $file->storeAs('careers/cv', $safeName, 'public'); // storage/app/public/...
+
+        $application = CareerApplication::create([
+            'full_name' => $validated['full_name'],
+            'email' => $validated['email'],
+            'phone' => $validated['phone'] ?? null,
+            'position' => $validated['position'] ?? null,
+            'location' => $validated['location'] ?? null,
+            'message' => $validated['message'] ?? null,
+            'cv_path' => $path,
+            'cv_original_name' => $file->getClientOriginalName(),
+            'ip_address' => $request->ip(),
+        ]);
+        $cvUrl = Storage::disk('public')->url($application->cv_path);
+
+        Mail::to(config('careers.admin_email'))->send(
+            new CareerApplicationSubmitted($application, $cvUrl)
+        );
+        return back()->with('success', 'Your application has been submitted successfully.');
+    }
 }

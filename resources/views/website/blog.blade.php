@@ -32,7 +32,7 @@
                 @foreach($recentPosts as $post)
                     <div class="col-lg-6">
 
-                        <a href="$" class="mil-blog-card mil-mb-60">
+                        <a href="{{route('post',$post)}}" class="mil-blog-card mil-mb-60">
                             <div class="mil-cover-frame mil-up">
                                 <img src="{{asset('storage/'.$post->featured_image)}}" alt="cover">
                             </div>
@@ -65,8 +65,7 @@
             <div class="row">
                 @foreach($posts as $post)
                     <div class="col-lg-12">
-
-                        <a href="#" class="mil-blog-card mil-blog-card-hori mil-more mil-mb-60">
+                        <a href="{{route('post',$post)}}" class="mil-blog-card mil-blog-card-hori mil-more mil-mb-60">
                             <div class="mil-cover-frame mil-up">
                                 <img src="{{asset('storage/'.$post->featured_image)}}" alt="cover">
                             </div>
@@ -83,7 +82,6 @@
                                 </div>
                             </div>
                         </a>
-
                     </div>
                 @endforeach
                 <div class="col-lg-12">

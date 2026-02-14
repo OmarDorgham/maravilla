@@ -39,11 +39,11 @@
                     </td>
 
                     <!-- Client -->
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $post->content }}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">{{ $post->excerpt }}</td>
 
                     <!-- Project Date -->
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                        {{ $post->published_at }}
+                        {{ $post->published_at->format('Y M d') }}
                     </td>
 
 

@@ -190,7 +190,9 @@
     filter: invert(100%); /* عكس ألوان الفيديو فقط */
     -webkit-filter: invert(100%);
 }
-
+.form-control{
+    background-color: rgba(126, 98, 57, 0.03);
+}
 /*@media screen and (max-width: 1200px) {*/
 /*    .mil-frame .mil-frame-top {*/
 /*        background-color: rgba(0, 0, 0, 0.95) !important;*/

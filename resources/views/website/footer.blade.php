@@ -59,7 +59,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#." class="mil-light-soft">
+                                    <a href="{{route('careers')}}" class="mil-light-soft">
                                         Careers
                                     </a>
                                 </li>

@@ -200,6 +200,16 @@
     });
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/toaster-ui@1.1.5/dist/main.js"></script>
+
+@if(session('success'))
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toaster = new ToasterUi();
+            toaster.addToast("{{session('success')}}");
+        });
+    </script>
+@endif
 
 @yield('custom_js')
 
