@@ -30,7 +30,7 @@
                                 <a href="{{route('contactus')}}">Contact Us</a>
                             </li>
                             <li class="mil-has-children">
-                                <a href="#.">Blog</a>
+                                <a href="{{route('blog')}}">Blog</a>
                                 {{--                                <ul>--}}
                                 {{--                                    <li><a href="team.html">Team</a></li>--}}
                                 {{--                                    <li><a href="contact.html">Contact</a></li>--}}

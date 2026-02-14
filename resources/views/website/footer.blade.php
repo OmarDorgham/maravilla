@@ -34,7 +34,7 @@
                                         <a href="{{route('contactus')}}">Contact</a>
                                     </li>
                                     <li class="mil-up">
-                                        <a href="blog.html">Blog</a>
+                                        <a href="{{route('blog')}}">Blog</a>
                                     </li>
                                 </ul>
                             </nav>

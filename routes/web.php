@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
@@ -10,6 +11,11 @@ use App\Http\Controllers\WebsiteController;
 use App\Models\Project;
 use Illuminate\Support\Facades\Route;
 
+
+Route::get('/clear-cache', function () {
+    Artisan::call('optimize:clear');
+    return "Cache & optimize cleared!";
+});
 Route::get('/sitemap.xml', [WebsiteController::class, 'index']);
 
 Route::get('/', [WebsiteController::class, 'home'])->name('home');
@@ -25,7 +31,6 @@ Route::get('/projects/{project:slug}', [WebsiteController::class, 'showProject']
 Route::get('contact-us', [WebsiteController::class, 'contact'])->name('contactus');
 Route::post('contact-us', [WebsiteController::class, 'storeContact'])->name('contactus.store');
 Route::get('blog', [WebsiteController::class, 'blog'])->name('blog');
-
 
 
 //https://maravilla-bc.com/
