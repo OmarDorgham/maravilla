@@ -12,10 +12,10 @@
                 <th class="px-6 py-4 text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200">{{ __('name') }}</th>
                 <th class="px-6 py-4 text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200">{{ __('Title') }}</th>
                 <th class="px-6 py-4 text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200">{{ __('socials') }}</th>
-{{--                <th class="px-6 py-4 text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200">{{ __('whatsapp') }}</th>--}}
-{{--                <th class="px-6 py-4 text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200">{{ __('linkedin') }}</th>--}}
-{{--                <th class="px-6 py-4 text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200">{{ __('instagram') }}</th>--}}
-{{--                <th class="px-6 py-4 text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200">{{ __('behance') }}</th>--}}
+                {{--                <th class="px-6 py-4 text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200">{{ __('whatsapp') }}</th>--}}
+                {{--                <th class="px-6 py-4 text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200">{{ __('linkedin') }}</th>--}}
+                {{--                <th class="px-6 py-4 text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200">{{ __('instagram') }}</th>--}}
+                {{--                <th class="px-6 py-4 text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200">{{ __('behance') }}</th>--}}
                 <th class="px-6 py-4 text-xs font-medium text-gray-500 uppercase tracking-wider border-b border-gray-200">{{ __('Actions') }}</th>
             </tr>
             </thead>
@@ -53,25 +53,23 @@
                         <span class="uppercase font-bold">behance: </span>
                         {{$member->behance}}
                     </td>
-{{--                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">--}}
-{{--                        {{$member->whatsapp}}--}}
-{{--                    </td>--}}
-{{--                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">--}}
-{{--                        {{$member->linkedin}}--}}
-{{--                    </td>--}}
-{{--                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">--}}
-{{--                        {{$member->instagram}}--}}
-{{--                    </td>--}}
-{{--                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">--}}
-{{--                        {{$member->behance}}--}}
-{{--                    </td>--}}
+                    {{--                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">--}}
+                    {{--                        {{$member->whatsapp}}--}}
+                    {{--                    </td>--}}
+                    {{--                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">--}}
+                    {{--                        {{$member->linkedin}}--}}
+                    {{--                    </td>--}}
+                    {{--                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">--}}
+                    {{--                        {{$member->instagram}}--}}
+                    {{--                    </td>--}}
+                    {{--                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">--}}
+                    {{--                        {{$member->behance}}--}}
+                    {{--                    </td>--}}
 
                     <!-- Actions -->
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-
-                        -
-                        {{--                        @include('dashboard.projects.partials.update-project-form')--}}
-                        {{--                        @include('dashboard.projects.partials.delete-project-form')--}}
+                        @include('dashboard.team.partials.update-member-form')
+                        @include('dashboard.team.partials.delete-member-form')
                     </td>
                 </tr>
             @empty

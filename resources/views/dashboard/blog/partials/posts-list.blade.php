@@ -47,11 +47,10 @@
                     </td>
 
 
-
                     <!-- Actions -->
                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-{{--                        @include('dashboard.posts.partials.update-post-form')--}}
-{{--                        @include('dashboard.posts.partials.delete-post-form')--}}
+                        @include('dashboard.blog.partials.update-post-form')
+                        @include('dashboard.blog.partials.delete-post-form')
                     </td>
                 </tr>
             @empty

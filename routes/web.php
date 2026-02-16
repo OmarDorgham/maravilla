@@ -57,7 +57,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('contacts', [ContactController::class, 'index'])->name('contacts.index');
         Route::resource('team-members', TeamMemberController::class);
 
-        Route::resource('blog', PostController::class);
+        Route::resource('blog', PostController::class)->parameters(['blog' => 'post']);
 
 
     });
