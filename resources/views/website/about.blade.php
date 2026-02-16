@@ -8,7 +8,7 @@
             </div>
             <div class="container">
                 <ul class="mil-breadcrumbs mil-mb-60">
-                    <li><a href="{{route('home')}}">Homepage</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
                     <li><a href="{{route('about')}}">About Us</a></li>
                 </ul>
                 <h1 class="mil-mb-60">Building a <br> Better <span class="mil-thin">World Today</span></h1>

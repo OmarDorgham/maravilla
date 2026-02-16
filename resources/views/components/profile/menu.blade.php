@@ -17,7 +17,7 @@
                         <ul>
                             <li class="mil-has-children {{request()->routeIs('home')?'mil-active':''}}">
                                 {{--                                onclick="location.reload(); return false;"--}}
-                                <a href="{{route('home')}}">Homepage</a>
+                                <a href="{{route('home')}}">Home</a>
                             </li>
                             <li class="mil-has-children {{request()->routeIs('about')?'mil-active':''}}">
                                 <a href="{{route('about')}}">About Us</a>

@@ -5,8 +5,8 @@
         <div class="mil-banner-content mil-center mil-up">
             <div class="container">
                 <ul class="mil-breadcrumbs mil-center mil-mb-60">
-                    <li><a href="home-1.html">Homepage</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
+                    <li><a href="{{route('contactus')}}">Contact</a></li>
                 </ul>
                 <h1 class="mil-mb-60">Get in touch!</h1>
                 <a href="#contact" class="mil-link mil-dark mil-arrow-place mil-down-arrow">

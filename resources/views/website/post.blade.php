@@ -5,7 +5,7 @@
         <div class="mil-banner-content mil-center mil-up">
             <div class="container">
                 <ul class="mil-breadcrumbs mil-center mil-mb-60">
-                    <li><a href="{{route('home')}}">Homepage</a></li>
+                    <li><a href="{{route('home')}}">Home</a></li>
                     <li><a href="{{route('blog')}}">Blog</a></li>
                     <li><a href="{{route('post',$post)}}">Publication</a></li>
                 </ul>
