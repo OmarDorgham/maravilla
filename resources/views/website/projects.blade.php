@@ -10,7 +10,7 @@
                 <div class="col-lg-9">
                     <div class="swiper-container mil-portfolio-slider mil-up">
                         <div class="swiper-wrapper">
-                            @foreach($profileProjects as $project)
+                            @foreach($projects as $project)
                                 <div class="swiper-slide">
 
                                     <div class="mil-portfolio-item mil-slider-item" data-swiper-parallax="-30">

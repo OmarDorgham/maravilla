@@ -53,7 +53,8 @@ class WebsiteController extends Controller
 
     public function projects()
     {
-        return view('website.projects');
+        $projects = Project::where('is_featured', 1)->get();
+        return view('website.projects', compact('projects'));
     }
 
     public function showProject(Project $project)
