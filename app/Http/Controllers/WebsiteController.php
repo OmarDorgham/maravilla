@@ -18,6 +18,7 @@ class WebsiteController extends Controller
     public function index()
     {
         $posts = Post::whereNotNull('published_at')->get();
+        $projects = Project::all();
 
         $xml  = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
         $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
@@ -25,19 +26,41 @@ class WebsiteController extends Controller
         // صفحات ثابتة
         $xml .= "  <url><loc>" . e(url('/')) . "</loc><priority>1.00</priority></url>\n";
         $xml .= "  <url><loc>" . e(url('/about')) . "</loc><priority>0.80</priority></url>\n";
-        $xml .= "  <url><loc>" . e(url('/services')) . "</loc><priority>0.80</priority></url>\n";
-        $xml .= "  <url><loc>" . e(url('/contact')) . "</loc><priority>0.80</priority></url>\n";
+        $xml .= "  <url><loc>" . e(url('/blog')) . "</loc><priority>0.80</priority></url>\n";
+        $xml .= "  <url><loc>" . e(url('/projects')) . "</loc><priority>0.80</priority></url>\n";
+        $xml .= "  <url><loc>" . e(url('/contact-us')) . "</loc><priority>0.80</priority></url>\n";
 
         // مقالات
         foreach ($posts as $post) {
+
             $loc = url('/blog/' . $post->slug);
             $lastmod = optional($post->updated_at)->toDateString();
+
             $xml .= "  <url>\n";
             $xml .= "    <loc>" . e($loc) . "</loc>\n";
+
             if ($lastmod) {
                 $xml .= "    <lastmod>{$lastmod}</lastmod>\n";
             }
+
             $xml .= "    <priority>0.70</priority>\n";
+            $xml .= "  </url>\n";
+        }
+
+        // المشاريع
+        foreach ($projects as $project) {
+
+            $loc = url('/projects/' . $project->slug);
+            $lastmod = optional($project->updated_at)->toDateString();
+
+            $xml .= "  <url>\n";
+            $xml .= "    <loc>" . e($loc) . "</loc>\n";
+
+            if ($lastmod) {
+                $xml .= "    <lastmod>{$lastmod}</lastmod>\n";
+            }
+
+            $xml .= "    <priority>0.75</priority>\n";
             $xml .= "  </url>\n";
         }
 
@@ -51,7 +74,6 @@ class WebsiteController extends Controller
         return response($xml, 200)
             ->header('Content-Type', 'application/xml; charset=UTF-8');
     }
-
     public function home()
     {
         return view('website.welcome');

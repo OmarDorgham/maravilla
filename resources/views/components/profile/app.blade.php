@@ -210,6 +210,24 @@
         });
     </script>
 @endif
+<script>
+    document.addEventListener('click', function(e) {
+
+        // لو المستخدم ضغط على أيقونة السوشال أو داخلها
+        const socialLink = e.target.closest('.mil-social-icons a');
+
+        if (!socialLink) return;
+
+        // منع أي overlay أو parent ياخذ الحدث
+        e.preventDefault();
+        e.stopPropagation();
+
+        // افتح الرابط في تبويب جديد
+        window.open(socialLink.href, '_blank');
+
+    }, true);
+</script>
+
 
 @yield('custom_js')
 

@@ -205,64 +205,66 @@
 
                                     @if($index == 1)
                                         <p class="mil-mobile-hidden mil-text-sm mil-mb-30" style="height: 30px;">
-                                            <span class="mil-accent">*</span> The founders of our agency
+{{--                                            <span class="mil-accent">*</span> The founders of our agency--}}
                                         </p>
                                     @endif
 
-                                    @foreach($teamMembers as $member)
+                                    {{-- ✅ هنا التعديل: بدل $teamMembers -> $columnMembers --}}
+                                    @foreach($columnMembers as $member)
                                         <div class="mil-team-card mil-up mil-mb-30">
                                             <img src="{{ asset('storage/' . $member->image) }}"
                                                  alt="{{ $member->name }}">
+
                                             <div class="mil-description">
                                                 <div class="mil-secrc-text">
                                                     <h5 class="mil-muted mil-mb-5">
-                                                        <a href="#">
-                                                            {{ $member->name }}
-                                                        </a>
+                                                        <a href="#">{{ $member->name }}</a>
                                                     </h5>
+
                                                     <p class="mil-link mil-light-soft mil-mb-10">{{ $member->position }}</p>
 
                                                     <ul class="mil-social-icons mil-center">
                                                         <li>
-                                                            <a href="{{ $member->whatsapp??config('socials.whatsapp') }}"
-                                                               target="_blank" class="social-icon"
-                                                               rel="noopener noreferrer"
-                                                               onclick="window.open(this.href, '_blank'); return false;">
+                                                            <a href="{{ $member->whatsapp ?? config('socials.whatsapp') }}"
+                                                               target="_blank"
+                                                               class="social-icon"
+                                                               rel="noopener noreferrer">
                                                                 <i class="fab fa-whatsapp"></i>
                                                             </a>
                                                         </li>
+
                                                         <li>
-                                                            <a href="{{ $member->linkedin ??config('socials.linkedin')}}"
-                                                               target="_blank" class="social-icon"
-                                                               rel="noopener noreferrer"
-                                                               onclick="window.open(this.href, '_blank'); return false;">
+                                                            <a href="{{ $member->linkedin ?? config('socials.linkedin') }}"
+                                                               target="_blank"
+                                                               class="social-icon"
+                                                               rel="noopener noreferrer">
                                                                 <i class="fab fa-linkedin"></i>
                                                             </a>
                                                         </li>
+
                                                         <li>
-                                                            <a href="{{ $member->instagram ??config('socials.instagram')}}"
+                                                            <a href="{{ $member->instagram ?? config('socials.instagram') }}"
                                                                target="_blank"
                                                                class="social-icon"
-                                                               rel="noopener noreferrer"
-                                                               onclick="window.open(this.href, '_blank'); return false;">
+                                                               rel="noopener noreferrer">
                                                                 <i class="fab fa-instagram"></i>
                                                             </a>
                                                         </li>
+
                                                         <li>
-                                                            <a href="{{ $member->behance ??config('socials.behance')}}"
-                                                               target="_blank" class="social-icon"
-                                                               rel="noopener noreferrer"
-                                                               onclick="window.open(this.href, '_blank'); return false;">
+                                                            <a href="{{ $member->behance ?? config('socials.behance') }}"
+                                                               target="_blank"
+                                                               class="social-icon"
+                                                               rel="noopener noreferrer">
                                                                 <i class="fab fa-behance"></i>
                                                             </a>
                                                         </li>
-
                                                     </ul>
+
                                                 </div>
                                             </div>
                                         </div>
                                     @endforeach
-
                                 </div>
                             @endforeach
                         </div>
