@@ -1,2 +1,24 @@
 User-agent: *
-Disallow:
+
+# السماح بأرشفة الموقع
+Allow: /
+
+# منع crawling للروابط ذات parameters (spam / tracking)
+Disallow: /*?
+
+# منع لوحات التحكم (عدّل حسب مساراتك)
+Disallow: /admin
+Disallow: /dashboard
+Disallow: /login
+Disallow: /register
+
+# منع ملفات النظام (اختياري لكن احترافي)
+Disallow: /storage/
+Disallow: /vendor/
+Disallow: /.env
+
+# منع نتائج البحث الداخلية لو موجودة
+Disallow: /search
+
+# sitemap
+Sitemap: https://maravilla-bc.com/sitemap.xml

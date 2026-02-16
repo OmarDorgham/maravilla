@@ -33,7 +33,7 @@ class ProjectController extends Controller
             'is_featured' => 'nullable',
         ]);
 
-        // رفع الصورة إذا تم تحميلها
+
         if ($request->hasFile('main_image')) {
             $validated['main_image'] = $request->file('main_image')->store('projects', 'public');
         }
