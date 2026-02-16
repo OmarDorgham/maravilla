@@ -209,7 +209,7 @@
                                         </p>
                                     @endif
 
-                                    @foreach($columnMembers as $member)
+                                    @foreach($teamMembers as $member)
                                         <div class="mil-team-card mil-up mil-mb-30">
                                             <img src="{{ asset('storage/' . $member->image) }}"
                                                  alt="{{ $member->name }}">
